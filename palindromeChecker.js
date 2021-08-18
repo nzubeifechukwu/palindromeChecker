@@ -11,7 +11,16 @@
  * We'll also pass strings with special symbols, such as 2A3*3a2, 2A3 3a2, and 2_A3*3#A2.
  */
 function palindrome(str) {
-    return true;
+    str = str.toLowerCase();
+    let alphaNumericStr = "";
+    let strSpelledBack = "";
+    for (let i = 0; i < str.length; i++) {
+        if (str[i].match(/[a-zA-Z0-9]/)) {
+            alphaNumericStr = alphaNumericStr + str[i];
+            strSpelledBack = str[i] + strSpelledBack;
+        }
+    }
+    return alphaNumericStr === strSpelledBack;
 }
 
-palindrome("eye");
+console.log(palindrome("My age is 0, 0 si ega ym."));
