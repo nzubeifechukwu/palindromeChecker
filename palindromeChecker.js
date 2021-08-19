@@ -15,7 +15,7 @@ function palindrome(str) {
     let alphaNumericStr = "";
     let strSpelledBack = "";
     for (let i = 0; i < str.length; i++) {
-        if (str[i].match(/[a-zA-Z0-9]/)) {
+        if (str[i].match(/[a-z0-9]/)) {
             alphaNumericStr = alphaNumericStr + str[i];
             strSpelledBack = str[i] + strSpelledBack;
         }
